@@ -12,8 +12,8 @@
         <nav>
             <ul>
                 <li>Accueil</li>
-                <li>Qui suis-je ?</li>
-                <li>Mes cours</li>
+                <li>Hadia</li>
+                <li><a href="#formulaire">Formulaire</a></li>
                 <li>Mes projets</li>
             </ul>
         </nav>
@@ -107,7 +107,7 @@
                         <tbody>
                             <tr>
                                 <!-- ceci est la première ligne de données du tableau -->
-                                <td>La capsule</td>
+                                <td>La capsule / Le réacteur / O'clock</td>
                                 <td>Téléprésentiel</td>
                             </tr>
                             <tr>
@@ -132,15 +132,78 @@
                 <div>
                     <h6>Les vidéos</h6>
                     <video
-                        src="../../ressources/ville.mp4"
-                        autoplay
-                        muted
-                        loop
+                        src="../../ressources/videotest.mp4"
                         width="400"
-                        height="200"
+                        height="400"
                     ></video>
                 </div>
             </section>
+            <section id="formulaire">
+                <h2>Les formulaires</h2>
+                <form>
+                    <div>
+                        <!-- for et id permet de lier le label et l'input -->
+                        <label for="name">Nom</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Entrez votre nom"
+                        /><br /><br />
+                        <label for="number">Age</label>
+                        <input
+                            type="number"
+                            placeholder="Entrez votre âge"
+                            id="number"
+                            value="18"
+                        />
+                    </div>
+                    <br /><br />
+                    <div>
+                        <!-- permet de sélectionner une option parmi une liste -->
+                        <label for="Gender">Genre</label>
+                        <select id="Gender">
+                            <option value="Homme">Homme</option>
+                            <option selected="select" value="Femme">Femme</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <br /><br />
+                    <div>
+                        <!-- permet de sélectionner une option -->
+                        <input type="radio" name="type" id="human" checked />
+                        <label for="human">Humain</label>
+
+                        <input type="radio" name="type" id="robot" />
+                        <label for="robot">Robot</label>
+
+                        <input type="radio" name="type" id="animal" />
+                        <label for="animal">Animal</label>
+                    </div>
+                    <!-- permet à l'utilisateur de laisser un message ou un commentaire -->
+                    <textarea
+                        placeholder="Entrez votre message"
+                        cols="50"
+                        rows="5"
+                    ></textarea>
+                    <br />
+                    <br />
+                    <!-- permet de cocher une case -->
+                    <input type="checkbox" id="accept" />
+                    <label for="accept"
+                        >Accepeter les condittions générales de vente</label
+                    >
+                    <br />
+                    <br />
+                    <!-- permet de valider le formulaire
+                     ce bouton sera lier à l'attribut action de la balise ouvrant de form -->
+                    <input type="submit" value="Envoyer" />
+                </form>
+            </section>
         </main>
+        <!-- mail et envoie de fichier -->
+        <footer>
+            <a href="mailto:hadiascriptre@gmail.com">Copntactez moi</a>
+            <a href="../notice.txt" download="Notice">Télécharger la notice</a>
+        </footer>
     </body>
 </html>
