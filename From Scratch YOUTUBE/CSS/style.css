@@ -1,0 +1,23 @@
+/* à ajouter pour les fonts qu'il ne connait pas et qu'il ira chercher par le lien */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..7*00&display=swap");
+
+/* font téléchargée et ajoutée dans le projet en cours */
+@font-face {
+    font-family: dancing_script;
+    src: url("./assets/Font/Dancing_Script/DancingScript-VariableFont_wght.ttf");
+}
+body {
+      font-family: dancing_script;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    /* les tailles de police doivent être en REM. 1rem=16px */
+    font-size: 2.5rem;
+    /* on peut ajouter les valeurs dans la console pour voir les changements et ensuite copier/coller le résultat qui nous plaît */
+    text-shadow: 8px 3px 6px rgba(0, 0, 0, 0.25);
+    color: rgb(11, 139, 139);
+    font-family: oswald;
+}
