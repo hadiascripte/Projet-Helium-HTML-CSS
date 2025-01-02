@@ -7,9 +7,16 @@
     src: url("./assets/Font/Dancing_Script/DancingScript-VariableFont_wght.ttf");
 }
 body {
-      font-family: dancing_script;
+    font-family: dancing_script;
+    background: url(../../ressources/imagecode.jpg) center/cover;
+    min-height: 100vh;
+    /* vieuwport heigh VH=100 de la taille de l'utilisateur */
 }
 
+/* * {
+    margin: 0;
+    padding: 0;
+} */
 h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -18,6 +25,41 @@ h1 {
     font-size: 2.5rem;
     /* on peut ajouter les valeurs dans la console pour voir les changements et ensuite copier/coller le résultat qui nous plaît */
     text-shadow: 8px 3px 6px rgba(0, 0, 0, 0.25);
-    color: rgb(11, 139, 139);
+    color: rgb(255, 255, 255);
     font-family: oswald;
 }
+main {
+    /* il faut éviter de forcer un heigth mais on peut ajouter un minimum */
+    min-height: 500px;
+    width: 80%;
+    background: rgba(228, 80, 80, 0.5);
+    /* pour centrer une boîte */
+    /* la marge peut avoir 4,3 ou 2 valeurs: 4= h,d,b,g 3=hb,g,d 2= hb,dg */
+    margin: 0 auto;
+    border: 2px solid rgb(243, 104, 104);
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 0px 20px 4px rgb(224, 127, 127);
+    padding: 15px;
+}
+h2 {
+    margin: 0;
+}
+/* flexbox sert à répartir équitablement des éléments (ex boites) dans un conteneur (ex une première boite) */
+.flexbox ul {
+    padding: 0;
+    /* le display flex permet d'aligner tous les éléments sur la même ligne */
+    display: flex;
+    justify-content: space-around;
+}
+.flexbox li {
+    list-style: none;
+    height: 160px;
+    width: 160px;
+    margin: 10px;
+    background: blanchedalmond;
+    /* centrer un seul élément verticalement ey horizontalement dans une boite */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
