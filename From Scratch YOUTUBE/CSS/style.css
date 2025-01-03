@@ -47,11 +47,13 @@ h2 {
 }
 /* on peut ajouter une classe pour avoir les mêmes propriétés en ajoutant une virgule */
 .flexbox,
-.grid {
+.grid,
+.absolute {
     border: 2px solid rgb(243, 104, 104);
     border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
+    min-height: 150px;
 }
 /* flexbox sert à répartir équitablement des éléments (ex boites) dans un conteneur (ex une première boite) */
 .flexbox ul {
@@ -95,12 +97,11 @@ form {
 input,
 textarea {
     margin: 5px;
-    border: 1px solid rgb(243, 104, 104);
+    border: 1px solid rgb(61, 173, 248);
     padding: 10px;
     font-size: 1.1rem;
     font-family: dancing_script;
     border-radius: 20px;
-
 }
 textarea {
     grid-area: ta;
@@ -113,11 +114,19 @@ textarea {
     /* montrer à l'utilisateur que le bouton est cliquable */
     cursor: pointer;
     background: rgb(61, 173, 248);
-    transition: 0.5s;
+    transition: 0.3s;
     border: none;
 }
 /* hover sert à ajouter un effet sur le bouton( ou d'autres boîtes) lorsqu'on passe la souris dessus */
 #btn-submit:hover {
     background: rgb(6, 54, 86);
     color: white;
+}
+
+/* ABSOLUTE */
+#circle1 {
+    height: 80px;
+    width: 80px;
+    background: sandybrown;
+    position: absolute;
 }
