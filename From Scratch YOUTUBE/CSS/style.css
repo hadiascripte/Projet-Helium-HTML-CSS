@@ -29,7 +29,7 @@ h1 {
     font-family: oswald;
 }
 main {
-    /* il faut éviter de forcer un heigth mais on peut ajouter un minimum */
+    /* il faut éviter de forcer un heigth avec une valeur fixe mais on peut ajouter une valeur minimum */
     min-height: 500px;
     width: 80%;
     background: rgba(228, 80, 80, 0.5);
@@ -38,11 +38,20 @@ main {
     margin: 0 auto;
     border: 2px solid rgb(243, 104, 104);
     border-radius: 20px 20px 20px 20px;
+    /* box shadow apporte un coté néo au contour */
     box-shadow: 0px 0px 20px 4px rgb(224, 127, 127);
     padding: 15px;
 }
 h2 {
     margin: 0;
+}
+/* on peut ajouter une classe pour avoir les mêmes propriétés en ajoutant une virgule */
+.flexbox,
+.grid {
+    border: 2px solid rgb(243, 104, 104);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
 }
 /* flexbox sert à répartir équitablement des éléments (ex boites) dans un conteneur (ex une première boite) */
 .flexbox ul {
@@ -62,4 +71,53 @@ h2 {
     justify-content: center;
     align-items: center;
 }
- 
+/* Le grid met les éléments les uns sous les autres de façon équitable */
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.grid img {
+    width: 80%;
+}
+form {
+    /* permet d'avoir une grille avec les éléments alignés les uns sous les autres  */
+    display: grid;
+    /* permet de mettre deux colonnes de fraction en fraction */
+    grid-template-columns: 1fr 1fr;
+    /* pour avoir le nombre de ligne que l'on souhaite il faut ajouter le templete rowx en mettant autant de valeurs que de lignes souhaitées */
+    grid-template-rows: 1fr 1fr 1fr;
+    /* ici nous indiquons (ou dessinons) les zones où l'on veut que nos éléments soient placés */
+    grid-template-areas:
+        "i1 i2"
+        "ta ta"
+        "vi bt";
+}
+input,
+textarea {
+    margin: 5px;
+    border: 1px solid rgb(243, 104, 104);
+    padding: 10px;
+    font-size: 1.1rem;
+    font-family: dancing_script;
+    border-radius: 20px;
+
+}
+textarea {
+    grid-area: ta;
+    height: 40px;
+    /* pour empêcher de redimensionner la zone de texte */
+    resize: none;
+}
+#btn-submit {
+    grid-area: bt;
+    /* montrer à l'utilisateur que le bouton est cliquable */
+    cursor: pointer;
+    background: rgb(61, 173, 248);
+    transition: 0.5s;
+    border: none;
+}
+/* hover sert à ajouter un effet sur le bouton( ou d'autres boîtes) lorsqu'on passe la souris dessus */
+#btn-submit:hover {
+    background: rgb(6, 54, 86);
+    color: white;
+}
