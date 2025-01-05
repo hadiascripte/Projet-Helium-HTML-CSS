@@ -1,4 +1,4 @@
-/* à ajouter pour les fonts qu'il ne connait pas et qu'il ira chercher par le lien */
+/* à ajouter pour les fonts que le robot ne connait pas et qu'il ira chercher par le lien */
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..7*00&display=swap");
 
 /* font téléchargée et ajoutée dans le projet en cours */
@@ -10,13 +10,8 @@ body {
     font-family: dancing_script;
     background: url(../../ressources/imagecode.jpg) center/cover;
     min-height: 100vh;
-    /* vieuwport heigh VH=100 de la taille de l'utilisateur */
+    /* vieuwport heigh VH=100 de la taille d'écran de l'utilisateur */
 }
-
-/* * {
-    margin: 0;
-    padding: 0;
-} */
 h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -50,12 +45,12 @@ h2 {
 .grid,
 .absolute {
     border: 2px solid rgb(243, 104, 104);
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     min-height: 150px;
 }
-/* flexbox sert à répartir équitablement des éléments (ex boites) dans un conteneur (ex une première boite) */
+/* flexbox sert à répartir équitablement des éléments (boites) dans un conteneur (une première boite) */
 .flexbox ul {
     padding: 0;
     /* le display flex permet d'aligner tous les éléments sur la même ligne */
@@ -68,7 +63,7 @@ h2 {
     width: 160px;
     margin: 10px;
     background: blanchedalmond;
-    /* centrer un seul élément verticalement ey horizontalement dans une boite */
+    /* centrer un seul élément verticalement et horizontalement dans une boite */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +81,7 @@ form {
     display: grid;
     /* permet de mettre deux colonnes de fraction en fraction */
     grid-template-columns: 1fr 1fr;
-    /* pour avoir le nombre de ligne que l'on souhaite il faut ajouter le templete rowx en mettant autant de valeurs que de lignes souhaitées */
+    /* pour avoir le nombre de ligne que l'on souhaite il faut ajouter le grid-templete-rows en mettant autant de valeurs que de lignes souhaitées */
     grid-template-rows: 1fr 1fr 1fr;
     /* ici nous indiquons (ou dessinons) les zones où l'on veut que nos éléments soient placés */
     grid-template-areas:
@@ -111,7 +106,7 @@ textarea {
 }
 #btn-submit {
     grid-area: bt;
-    /* montrer à l'utilisateur que le bouton est cliquable */
+    /*pour montrer à l'utilisateur que le bouton est cliquable */
     cursor: pointer;
     background: rgb(61, 173, 248);
     transition: 0.3s;
@@ -124,9 +119,28 @@ textarea {
 }
 
 /* ABSOLUTE */
+.absolute {
+    /* la position relatrive de la boite absolute (parent) est indispensable pour que l'élément souhaité soit positionné à l'interieur (du parent). Sans cette position relative l'élément en absolute que l'on souhaite positionner le sera en fonction du body. */
+    position: relative;
+}
 #circle1 {
     height: 80px;
     width: 80px;
-    background: sandybrown;
+    background: rgb(61, 173, 248);
     position: absolute;
+    border-radius: 150px;
+    top: -20px;
+    right: -20px;
+}
+#circle2 {
+    height: 40px;
+    width: 40px;
+    background: blue;
+    position: absolute;
+    border-radius: 150px;
+    /* ici l'élément sera centré en fonction de son bord gauche */
+    left: 50%;
+    /* pour le centrer en son coeur il faut faire un transform translatex( (x=horizontalement y=verticalement) (de sa propre taille) */
+    transform: translatex(-50%);
+    top: 100px;
 }
