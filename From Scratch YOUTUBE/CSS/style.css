@@ -6,6 +6,13 @@
     font-family: dancing_script;
     src: url("./assets/Font/Dancing_Script/DancingScript-VariableFont_wght.ttf");
 }
+/* L'astérix permet de mettre à zéro des paramètres */
+* {
+    margin: 0;
+    padding: 0;
+    /* Pour vérifier où sont chaque éléments on peut ajouter un border pour avoir un aperçu */
+    /* border: solid rgb(255, 255, 255); */
+}
 body {
     font-family: dancing_script;
     background: url(../../ressources/imagecode.jpg) center/cover;
@@ -17,7 +24,8 @@ h1 {
     letter-spacing: 3px;
     text-align: center;
     /* les tailles de police doivent être en REM. 1rem=16px */
-    font-size: 2.5rem;
+    /* La mesure vw (viewportwidth) permet de garder la taille du texte en fonction de la taille de l'écran de l'utilisateur */
+    font-size: 8vw;
     /* on peut ajouter les valeurs dans la console pour voir les changements et ensuite copier/coller le résultat qui nous plaît */
     text-shadow: 8px 3px 6px rgba(0, 0, 0, 0.25);
     color: rgb(255, 255, 255);
@@ -75,6 +83,8 @@ h2 {
 }
 .grid img {
     width: 80%;
+    margin: 20px auto;
+    display: block;
 }
 form {
     /* permet d'avoir une grille avec les éléments alignés les uns sous les autres  */
@@ -144,3 +154,32 @@ textarea {
     transform: translatex(-50%);
     top: 100px;
 }
+/* RESPONSIVE: C'est ka fait de faire adapter les éléments aux tailles des différents écrans. La façon la plus connue est de partir de la taille d'écrran la plus grande à savoir 1220. 
+On rétrécie la fenêtre jusqu'à ce que ça "casse" puis on ajoute un media squart pour bloquer le rendu voulu (ici on peut vérifier le rendu en ajoutant un background pour voir le changement au moment du rétrécicement de la fenêtre*/
+@media screen and (max-width: 900px) {
+    /* une fois la taille voulue on change le grid contenair qui était en display grid (30%/70%)en display block */
+    .grid-container {
+        display: block;
+    }
+    /* ici on change la taille de la première boite (en %) */
+    .grid-container img {
+        width: 40%;
+    }
+    /* pour centrer l'image on doit remonter sur notre image et la mettre en display block */
+}
+@media screen and (max-width: 550px) {
+    .flexbox ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "i1"
+            "i2"
+            "ta"
+            "bt";
+    }
+}
+/* Comment débuguer en CSS */
