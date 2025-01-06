@@ -18,6 +18,7 @@ body {
     background: url(../../ressources/imagecode.jpg) center/cover;
     min-height: 100vh;
     /* vieuwport heigh VH=100 de la taille d'écran de l'utilisateur */
+    min-width: 360px;
 }
 h1 {
     text-transform: uppercase;
@@ -182,4 +183,3 @@ On rétrécie la fenêtre jusqu'à ce que ça "casse" puis on ajoute un media sq
             "bt";
     }
 }
-/* Comment débuguer en CSS */
