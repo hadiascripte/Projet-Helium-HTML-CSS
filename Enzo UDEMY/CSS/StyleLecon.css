@@ -2,10 +2,19 @@ body {
     height: 100vh;
 }
 .box {
-    width: 250px;
-    height: 250px;
-    background: orange;
-    margin: 50px;
-    /* padding: 50px 30px; */
-    /* border: 5px solid black; */
+    display: none;
+    width: 100px;
+    height: 100px;
+    background: rgb(60, 235, 220);
+}
+span{
+    color: aqua;
+    display: block;
+    font-size: 0.3 ;
+}
+#p1{
+    display: none;
+}
+#p2{
+    visibility: hidden;
 }
