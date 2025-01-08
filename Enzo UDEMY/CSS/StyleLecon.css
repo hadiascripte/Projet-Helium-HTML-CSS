@@ -1,20 +1,31 @@
 body {
     height: 100vh;
 }
-.box {
-    display: none;
-    width: 100px;
-    height: 100px;
-    background: rgb(60, 235, 220);
+.img-responsive {
+    width: 100%;
+    height: auto;
 }
-span{
-    color: aqua;
-    display: block;
-    font-size: 0.3 ;
+.carte-img {
+    width: 450px;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid black;
 }
-#p1{
-    display: none;
+
+.bloc-img {
+    height: 70%;
+    width: 100%;
+    overflow: hidden;
 }
-#p2{
-    visibility: hidden;
+.carte-img h3 {
+    padding: 10px;
+}
+.carte-img a {
+    padding: 0px 10px;
+}
+.carte-img p {
+    padding: 0px 10px 10px 10px;
+}
+.carte-img hr {
+    margin-bottom: 15px;
 }
