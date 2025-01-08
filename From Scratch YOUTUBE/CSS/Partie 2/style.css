@@ -14,8 +14,9 @@
 body {
     background: url(../../../ressources/capricorn-.jpg) center/cover;
     height: 100vh;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--color2);
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    color: var(--color4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,8 +24,8 @@ body {
 .card {
     background: rgba(0, 0, 0, 0.507);
     width: calc(100% - 50px);
-    padding: 15px;
-    box-shadow: 10px -10px 2px rgba(0, 0, 0, 15);
+    padding: 20px 20px 6px;
+    box-shadow: 10px -10px 2px var(--color5);
     border-radius: 15px;
     backdrop-filter: blur(5px);
 }
@@ -43,9 +44,9 @@ h1 {
     grid-template-columns: 20% 80%;
 }
 .polygon_container {
-      /* le drop shadow permet de faire une ombre sur des éléments ayant des formes particulières */
-    filter: drop-shadow(-1px 20px 3px var(--color1));
-    /* Ceci permet de centrer un élément sur les X et les Y dans un parent en grid . On peut ajouter un position en l'indiquant après le center*/
+    /* le drop shadow permet de faire une ombre sur des éléments ayant des formes particulières */
+    filter: drop-shadow(-1px 15px 3px var(--color5));
+    /* Ceci permet de centrer un élément sur les X et les Y dans un parent en grid. On peut ajouter une position en l'indiquant après le center*/
     place-self: center left;
 }
 .polygon {
@@ -68,7 +69,6 @@ h1 {
     content: "Un texte";
     position: absolute;
     color: var(--color4);
-    background: black;
     /* Pour le centrer. Mais attention, il sera centré en fonction de son coin haut gauche */
     top: 50%;
     left: 50%;
