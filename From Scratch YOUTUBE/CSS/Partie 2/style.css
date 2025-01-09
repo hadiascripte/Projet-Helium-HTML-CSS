@@ -78,3 +78,38 @@ h1 {
     padding: 4px;
     text-align: center;
 }
+p {
+    line-height: 26px;
+    margin: 20px 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-align: justify;
+}
+p::selection{
+    background: var(--color2);
+    color:var(--color1);
+}
+.checkbox-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0 30px;
+}
+input[type="checkbox"]{
+display: none;
+}
+input[type="checkbox"]:checked + label{
+    /* display: none; */
+    background: white;
+    color: var(--color5);
+    transform: scale(1.1);
+}
+label{
+    cursor: pointer;
+    border: 1px solid var(--color2);
+    background: var(--color5);
+    padding: 10px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
