@@ -81,35 +81,43 @@ h1 {
 p {
     line-height: 26px;
     margin: 20px 0;
+    /* pour limiter le nombre de lignes que l'on souhaite voir apparaître sur le site */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+    /* pour masquer le reste du texte tant que celu-ci fait plus de 4 lignes */
     overflow: hidden;
     text-align: justify;
 }
-p::selection{
+p::selection {
+    /* pour donner un style différent lorsque du texte est sélectionné par l'utilisateur */
     background: var(--color2);
-    color:var(--color1);
+    color: var(--color1);
 }
-.checkbox-container{
+.checkbox-container {
     display: flex;
+    /* pour répartir les inputs dans la boîte */
     justify-content: space-around;
     margin: 20px 0 30px;
 }
-input[type="checkbox"]{
-display: none;
+input[type="checkbox"] {
+    /* pour faire disparaître le case de sélection */
+    display: none;
 }
-input[type="checkbox"]:checked + label{
+input[type="checkbox"]:checked + label {
+    /* si on remplace le + par ~ on agira sur tous les labels suivants. En mettant + on agit sur le label coché */
     /* display: none; */
     background: white;
     color: var(--color5);
     transform: scale(1.1);
 }
-label{
+label {
+    /* pour informer l'utilisateur de la possibilité de cocher une case */
     cursor: pointer;
     border: 1px solid var(--color2);
     background: var(--color5);
     padding: 10px;
     border-radius: 15px;
+    /* pour ajouter une animation une fois la case cochée */
     transition: 0.3s;
 }
