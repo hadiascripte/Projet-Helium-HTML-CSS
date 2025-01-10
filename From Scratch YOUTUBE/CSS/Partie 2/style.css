@@ -121,6 +121,7 @@ label {
     border-radius: 15px;
     /* pour ajouter une animation une fois la case cochée */
     transition: 0.3s;
+    /* Pour empêcher l'utilisateur de sélectionner du texte */
     user-select: none;
 }
 .email {
@@ -131,16 +132,19 @@ label {
     padding: 10px;
     border-radius: 15px;
     outline: none;
+    /* la border ici doit correspondre à celle qui sera mise que la border du focus, si border il y a, sinon si la border est en none ceci créera une déccalage visible sur le navigateur */
     border: 1px solid transparent;
     transition: 0.3s;
     text-align: center;
     font-size: 1.1rem;
     color: var(--color3);
     background: var(--color5);
+    /* Ceci permet de donner une taille dynamique à l'élément sans avoir a utiler le media query */
     min-width: 180px;
     width: 35%;
     max-width: 300px;
 }
+/* Le focus est le fait que la case soit "occupée" par le cursur */
 input[type="text"]:focus {
     background: transparent;
     border: 1px solid var(--color4);
@@ -148,8 +152,10 @@ input[type="text"]:focus {
 }
 input[type="text"]::placeholder {
     color: var(--color4);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 button {
+    /* Pour indiquer à l'utilisateur que le bouton est cliquable */
     cursor: pointer;
     background: var(--color3);
     color: var(--color4);
@@ -159,34 +165,44 @@ button {
     border-radius: 150px;
     margin: 0 auto;
     display: block;
+    /* Ceci est la transition qui agira en entrée et en sortie sur l'élement qui a le hover(button hover). On doit placer la déclaration dans l'élément principal; ici dans le sélecteur bouton */
     transition: 0.1s;
 }
 button:hover {
     letter-spacing: 3px;
 }
-button:hover + a, a:hover {
+button:hover + a,
+a:hover {
+    /* ici on crée cette déclaration pour que l'effet d'apparition soit effective. Il s'agit en fait de donner une valeur 1 à la propriété opacité  */
     opacity: 1;
-    transform: translateY(0PX);
+    /* Et on n'oublie pas non plus de mettre la valeur 0 à la propriété translate */
+    transform: translateY(0px);
 }
-button:active{
+button:active {
+    /* Ceci permet à l'utilisateur d'avoir un visuel qui lui confirme que son clique à eu un effet */
     transform: scale(1.2);
     background: var(--color4);
     color: var(--color3);
-    border:none;
+    border: none;
     border-radius: 150px;
-
 }
 a {
+    /* Pour personnaliser la couleur du lien */
     color: var(--color4);
     text-align: center;
     display: block;
     font-size: 1.2rem;
-    /* text-decoration: none; */
+    /* Si on ne veut pas que le lien soit souligné il faut ajouter la propriété suivante:text-decoration: none; */
+
+    /* Ici on met l'opacité à 0 si on souhaite faire apparaitre uyn élément au moment où un fait un hover sur le bouton.
+    Pour que l'effet de l'apparition soit visible il faut créer un button:hover(voir les réglage dans le sélecteur) */
     opacity: 0;
+    /* on n'oublie pas cette déclaration pour que le lien descende */
     transform: translateY(20px);
     transition: 0.3s;
-    padding:8px 0;
+    padding: 8px 0;
 }
 a:visited {
+    /* Ceci permet de donner une couleur particulière à un lien qui a été visité(cliqué) */
     color: var(--color3);
 }
