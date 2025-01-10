@@ -107,17 +107,86 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked + label {
     /* si on remplace le + par ~ on agira sur tous les labels suivants. En mettant + on agit sur le label coché */
     /* display: none; */
-    background: white;
+    background: var(--color4);
     color: var(--color5);
     transform: scale(1.1);
+    filter: brightness(120%);
 }
 label {
     /* pour informer l'utilisateur de la possibilité de cocher une case */
     cursor: pointer;
-    border: 1px solid var(--color2);
+    border: 1px solid var(--color4);
     background: var(--color5);
     padding: 10px;
     border-radius: 15px;
     /* pour ajouter une animation une fois la case cochée */
     transition: 0.3s;
+    user-select: none;
+}
+.email {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.email input {
+    padding: 10px;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid transparent;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color3);
+    background: var(--color5);
+    min-width: 180px;
+    width: 35%;
+    max-width: 300px;
+}
+input[type="text"]:focus {
+    background: transparent;
+    border: 1px solid var(--color4);
+    border-radius: 150px;
+}
+input[type="text"]::placeholder {
+    color: var(--color4);
+}
+button {
+    cursor: pointer;
+    background: var(--color3);
+    color: var(--color4);
+    border: none;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    border-radius: 150px;
+    margin: 0 auto;
+    display: block;
+    transition: 0.1s;
+}
+button:hover {
+    letter-spacing: 3px;
+}
+button:hover + a, a:hover {
+    opacity: 1;
+    transform: translateY(0PX);
+}
+button:active{
+    transform: scale(1.2);
+    background: var(--color4);
+    color: var(--color3);
+    border:none;
+    border-radius: 150px;
+
+}
+a {
+    color: var(--color4);
+    text-align: center;
+    display: block;
+    font-size: 1.2rem;
+    /* text-decoration: none; */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+    padding:8px 0;
+}
+a:visited {
+    color: var(--color3);
 }
