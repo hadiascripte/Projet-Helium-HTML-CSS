@@ -1,31 +1,20 @@
 body {
+    width: 100%;
     height: 100vh;
+    margin: 0;
 }
-.img-responsive {
+.accueil {
     width: 100%;
-    height: auto;
-}
-.carte-img {
-    width: 450px;
-    height: auto;
-    overflow: hidden;
-    border: 1px solid black;
-}
-
-.bloc-img {
-    height: 70%;
-    width: 100%;
-    overflow: hidden;
-}
-.carte-img h3 {
-    padding: 10px;
-}
-.carte-img a {
-    padding: 0px 10px;
-}
-.carte-img p {
-    padding: 0px 10px 10px 10px;
-}
-.carte-img hr {
-    margin-bottom: 15px;
+    height: 100%;
+    /* background: #333; */
+    background-color: #333;
+    background-image: url(../../ressources/imagenature.jpg);
+    /* le background en valeur top permet de laisser l'image en haut lorsque le not repeat est activé sur une grande hauteur */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Pour des images qui seraient un peu plus petite que le body, on peut mettre le size en cover pour forcer l'image. Mais attention à ce que l'image ne soit pas trop petite sinon elle perderait de la qualité */
+    background-size: cover;
+    /* Voici l'odre à respecter pour avoir directement les option principales du background: */
+    
+    /* background: no-repeat center / cover url(../../ressources/imagenature.jpg); */
 }
