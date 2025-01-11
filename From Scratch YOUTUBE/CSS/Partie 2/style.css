@@ -20,6 +20,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 .card {
     background: rgba(0, 0, 0, 0.507);
@@ -38,7 +39,33 @@ body {
 }
 h1 {
     margin-bottom: 24px;
+    position: relative;
 }
+/* Pour faire un after ou un before il faut deux choses obligatoires: le content (vide ou non) et la position (en absolute) */
+h1::after {
+    content: "";
+    /* A noter: pour la plupart des éléments en absolute on doit mettre une frontière à son parent pour qu'il puisse se positionner en fonction de son parent */
+    position: absolute;
+    background: var(--color4);
+    height: 2px;
+    width: 100%;
+    bottom: -14px;
+    /* Pour centrer l'élément (ici une barre) horizontalement on fait un left de 50% pour le centrer sur son coin gauche+ transform translate de sa taille de -50% pour le centrer en son milieu */
+    left: 50%;
+    /* Pour animer cette barre pour la faire gonfler au moment de l'animation il faut lui donner un transform translateX(-50%) et une scaleX(0) pour qu'elle ne s'affiche pas */
+    transform: translate(-50%) scale(0);
+    /* Puis pour faire l'animation on créé un @keyframes identifier. Pour que la barre reste affiché à la fin de l'animation il faut ajouter forwards dans l'animation */
+    animation: h1anim 6s ease-in-out forwards;
+    /* Pour donner un lieu de départ on ajoute */
+    transform-origin: center;
+}
+@keyframes h1anim {
+    100% {
+        /* Il est important de retranscire ici le tranlate sinon la propriété transform d'ici va écraser celle qui est dans ke h1after */
+        transform: translate(-50%) scaleX(1);
+    }
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 20% 80%;
@@ -99,6 +126,8 @@ p::selection {
     /* pour répartir les inputs dans la boîte */
     justify-content: space-around;
     margin: 20px 0 30px;
+    /* On ajoute ici la perspective pour l'animation que nous avons mis à l'enfant 4. Elle va de 0 à 1000. Plus le nombre est petit plus la perspective est accentuée et plus le nombre est grand plus elle est faible */
+    perspective: 100px;
 }
 input[type="checkbox"] {
     /* pour faire disparaître le case de sélection */
@@ -123,6 +152,36 @@ label {
     transition: 0.3s;
     /* Pour empêcher l'utilisateur de sélectionner du texte */
     user-select: none;
+}
+label:first-of-type:hover {
+    /* Ici le infinite permet de jouer l'animation tant que l'utilisateur est en hover sur le bouton. Le linear permet de faire en sorte que le mouvement linéaire sans coupure */
+    animation: label1 1s infinite linear;
+}
+@keyframes label1 {
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* Pour faire une animation en 3d sur le hover */
+label:nth-child(4):hover {
+    animation: label2 3s infinite linear;
+}
+/* Pour faire la 3D il ne faut pas oublier de faire de la perspective sur le parent(ici le checkbox container */
+@keyframes label2 {
+    33% {
+        /* ici l'élément se rapproche de nous */
+        transform: translateZ(30px);
+    }
+    66% {
+        /* ici l'élément s'éloigne de nous */
+        transform: translateZ(-40px);
+    }
+    100% {
+        transform: translateZ(0);
+    }
 }
 .email {
     text-align: center;
@@ -175,6 +234,8 @@ button:hover + a,
 a:hover {
     /* ici on crée cette déclaration pour que l'effet d'apparition soit effective. Il s'agit en fait de donner une valeur 1 à la propriété opacité  */
     opacity: 1;
+    /* En Visibility Visible il n'y aura plus le bug en passant par dessus le lien car il est en visibility hidden dans son a seul */
+    visibility: visible;
     /* Et on n'oublie pas non plus de mettre la valeur 0 à la propriété translate */
     transform: translateY(0px);
 }
@@ -197,6 +258,8 @@ a {
     /* Ici on met l'opacité à 0 si on souhaite faire apparaitre uyn élément au moment où un fait un hover sur le bouton.
     Pour que l'effet de l'apparition soit visible il faut créer un button:hover(voir les réglage dans le sélecteur) */
     opacity: 0;
+    /* Pour éviter le bug en pasant par dessu le lien il faut lui donner un visibility hidden ici et dans le a hover il faut lui mettre une Visibility Visible */
+    visibility: hidden;
     /* on n'oublie pas cette déclaration pour que le lien descende */
     transform: translateY(20px);
     transition: 0.3s;
@@ -205,4 +268,69 @@ a {
 a:visited {
     /* Ceci permet de donner une couleur particulière à un lien qui a été visité(cliqué) */
     color: var(--color3);
+}
+img {
+    height: 10%;
+    position: absolute;
+    filter: drop-shadow(0px 6px 3px rgba(246, 218, 94, 0.647));
+    /* Pour le mettre en arrière plan il faut le mettre en négatif */
+    z-index: -1;
+    animation: coeur 30s infinite linear;
+}
+@keyframes coeur {
+    0% {
+        top: 2%;
+        left: 2%;
+        transform: rotate(90deg);
+    }
+    10% {
+        top: 6%;
+        left: 30%;
+        transform: rotate(90deg);
+    }
+    20% {
+        top: 2%;
+        left: 60%;
+        transform: rotate(90deg);
+    }
+    30% {
+        top: 2%;
+        left: 80%;
+        transform: rotate(90deg);
+    }
+    40% {
+        top: 20%;
+        left: 110%;
+        transform: rotate(90deg);
+    }
+    50% {
+        top: 50%;
+        left: 80%;
+        transform: rotate(90deg);
+    }
+    60% {
+        top: 90%;
+        left: 90%;
+        transform: rotate(90deg);
+    }
+    70% {
+        top: 110%;
+        left: 50%;
+        transform: rotate(90deg);
+    }
+    80% {
+        top: 85%;
+        left: 30%;
+        transform: rotate(90deg);
+    }
+    90% {
+        top: 50%;
+        left: 15%;
+        transform: rotate(90deg);
+    }
+    100% {
+        top: 2%;
+        left: 2%;
+        transform: rotate(90deg);
+    }
 }
