@@ -155,7 +155,7 @@ textarea {
     transform: translatex(-50%);
     top: 100px;
 }
-/* RESPONSIVE: C'est ka fait de faire adapter les éléments aux tailles des différents écrans. La façon la plus connue est de partir de la taille d'écrran la plus grande à savoir 1220. 
+/* RESPONSIVE: C'est le fait de faire adapter les éléments aux tailles des différents écrans. La façon la plus connue est de partir de la taille d'écrran la plus grande à savoir 1220. 
 On rétrécie la fenêtre jusqu'à ce que ça "casse" puis on ajoute un media squart pour bloquer le rendu voulu (ici on peut vérifier le rendu en ajoutant un background pour voir le changement au moment du rétrécicement de la fenêtre*/
 @media screen and (max-width: 900px) {
     /* une fois la taille voulue on change le grid contenair qui était en display grid (30%/70%)en display block */
