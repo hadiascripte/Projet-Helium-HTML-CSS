@@ -1,0 +1,63 @@
+/* Centrer un élément horizontalement parfaitement */
+.titre {
+    /* Pour une élément en block */
+    text-align: center;
+}
+.boite {
+    margin: 0 auto;
+    /* Pour les éléments quine sont pa en block de base (img,a,span,button) il faut ajouter */
+    display: block;
+}
+/* ********************************** FLEX *************************************** */
+/* Centrer un élément dans sa boite( pour un enfant unique) */
+.parent-de-un-seul-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Répartir équitablement sur la même ligne des éléments dans la page (ex: 3 li à répartir */
+.parent-de-plusieurs-enfants {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* ********************************** GRID *************************************** */
+
+/* Répartir précisément des éléménets dans la largeur avec des tailles différentes */
+.parent-de-trois-elements {
+    display: grid;
+    grid-template-columns: 30% 40% 40%;
+}
+/* Créer des grilles complexes */
+.parent-des-elements {
+    display: grid;
+    /* Pour donner les colonnes */
+    grid-template-columns: 100px 1fr 1fr;
+    /* Pour donner les lignes */
+    grid-template-rows: 1fr 1fr 300px;
+    /* Pour dessiner notre grille */
+    grid-template-areas: 
+    "header header header"
+    "side main main"
+    "side footer footer";
+}
+/* Pour indiquer où vont chaque élément */
+.enfant1{
+      grid-area: header;
+}
+.enfant2{
+      grid-area: side;
+}
+
+/* ********************************** ABSOLUTE *************************************** */
+/* Pour centrer parfaitement un élément */
+.parent{
+      position: relative;
+}
+.enfant{
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      /* Pour qu'il se centre en son centre (et non dans son coin haut gauche). */
+      transform: translate(-50%,-50%);
+}
