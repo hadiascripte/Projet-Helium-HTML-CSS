@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..600;1,14..32,100..900&display=swap");
 * {
     margin: 0;
-    padding: 5;
+    padding: 0;
     box-sizing: border-box;
     font-family: "inter";
 }
@@ -17,7 +17,7 @@ body {
 nav {
     display: grid;
     grid-template-columns: 50% 50%;
-    padding: 10px 20px;
+    padding: 20px 30px;
 }
 nav ul {
     display: grid;
@@ -27,7 +27,7 @@ nav ul {
 header {
     display: grid;
     grid-template-columns: 50% 50%;
-    padding: 30px 15px 30px 30px;
+    padding: 20px 30px;
     width: 100%;
 }
 
@@ -51,19 +51,23 @@ p {
     width: 100%;
 }
 .info {
-    display: grid;
-    grid-template-columns: 30% 70%;
+    display: flex;
     background: black;
     border-radius: 20px;
-    /* height: auto; */
     padding: 15px;
     margin: 10px;
+    height: 140px;
 }
-
+.infos-left {
+    width: 30%;
+    height: auto;
+}
 .infos-left h3 {
     font-size: 1rem;
+    padding-bottom: 5px;
 }
 .btn-container button {
+    display: block;
     background: rgb(79, 81, 240);
     border: none;
     margin: 5px;
@@ -72,19 +76,19 @@ p {
     color: white;
     font-size: 0.7rem;
     width: 100%;
-    max-width:130px ;
-
+    max-width: 120px;
 }
-
-.investors {
-    display: grid;
-    align-items: center;
- 
+.infos-right {
+    display: flex;
+    flex-direction: column; /* Permet de placer h3 au-dessus des images */
+    justify-content: space-between; /* Aligne les enfants verticalement dans .infos-right */
+    width: 70%;
 }
 .img-container {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    display: flex;
+    justify-content: space-around;
 }
-.img-container img{
-    height: 60px;
+.img-container img {
+    height: 35px;
+    margin-bottom: 15px;
 }
