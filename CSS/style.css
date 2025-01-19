@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..600;1,14..32,100..900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "inter";
+}
+li {
+    list-style: none;
+}
+body {
+    background-color: rgb(27, 27, 27);
+    height: 100vh;
+    min-width: 300px;
+    width: 100%;
+    color: white;
+}
+nav {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 20px;
+}
+nav ul {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 20px;
+}
+
+.headerleftcontainer h1 {
+    font-size: 4.5rem;
+}
+.headerleftcontainer h3 {
+    color: rgb(79, 81, 240);
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+p {
+    font-size: 0.8rem;
+    width: 90%;
+}
+.header-right {
+    margin: auto;
+    width: 100%;
+}
+#modem {
+    /* Pour que l'image ne se déforme pas il faut mettre un heigth auto(pour le flex). Pour le grid bien faire attention a ce que l'image soit l'enfant direct du header. Elle ne doit pas être dans un container */
+    width: 100%;
+    height: auto;
+}
+
+.info {
+    display: flex;
+    background: black;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 10px;
+    height: 140px;
+}
+.infos-left {
+    width: 30%;
+    height: auto;
+}
+.infos-left h3 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+}
+.btn-container button {
+    display: block;
+    background: rgb(79, 81, 240);
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.7rem;
+    width: 100%;
+    max-width: 120px;
+}
+.infos-right {
+    display: flex;
+    flex-direction: column; /* Permet de placer h3 au-dessus des images */
+    justify-content: space-between; /* Aligne les enfants verticalement dans .infos-right */
+    width: 70%;
+}
+.infos-right h3 {
+    font-size: 1rem;
+}
+.img-container {
+    display: flex;
+    justify-content: space-around;
+}
+.img-container img {
+    height: 35px;
+    margin-bottom: 15px;
+}
+/* ************************ Media queries ************************ */
+@media screen and (max-width: 870px) {
+    .headerleftcontainer h1 {
+        font-size: 2.5rem;
+    }
+    .headerleftcontainer h3 {
+        font-size: 0.9rem;
+    }
+    .headerleftcontainer p {
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 770px) {
+    .headerleftcontainer h1 {
+        font-size: 2.5rem;
+    }
+    .headerleftcontainer h3 {
+        font-size: 0.9rem;
+    }
+    .headerleftcontainer p {
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 680px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+    .headerleftcontainer {
+        display: block;
+    }
+
+    .headerleftcontainer h1 {
+        font-size: 1.8rem;
+    }
+    .headerleftcontainer p {
+        font-size: 0.rem;
+    }
+    .header-right {
+        display: flex;
+        justify-content: center;
+    }
+    #modem {
+        margin-top: 15px;
+        width: 100%;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .infos-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .infos-right {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+    }
+    .infos-right h3{
+        margin-bottom: 10px;
+    }
+}
