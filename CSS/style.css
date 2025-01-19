@@ -144,7 +144,7 @@ p {
         font-size: 1.8rem;
     }
     .headerleftcontainer p {
-        font-size: 0.rem;
+        font-size: 0rem;
     }
     .header-right {
         display: flex;
@@ -152,12 +152,11 @@ p {
     }
     #modem {
         margin-top: 15px;
-        width: 100%;
+        width: 80%;
     }
     .info {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         height: auto;
     }
@@ -169,10 +168,13 @@ p {
     }
     .infos-right {
         margin-top: 15px;
-        display: flex;
         align-items: center;
     }
-    .infos-right h3{
-        margin-bottom: 10px;
+    .infos-right h3 {
+        margin-bottom:10px;
+    }
+    .infos-right img{ 
+        margin-top: 15px;
+        height: 45px;
     }
 }

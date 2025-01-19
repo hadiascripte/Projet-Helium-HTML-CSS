@@ -32,7 +32,7 @@ nav ul {
 }
 
 .headerleftcontainer h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
 }
 .headerleftcontainer h3 {
     color: rgb(79, 81, 240);
@@ -49,7 +49,7 @@ p {
 }
 #modem {
     /* Pour que l'image ne se déforme pas il faut mettre un heigth auto(pour le flex). Pour le grid bien faire attention a ce que l'image soit l'enfant direct du header. Elle ne doit pas être dans un container */
-    width:50%;
+    width: 50%;
     height: auto;
 }
 
@@ -141,10 +141,10 @@ p {
     }
 
     .headerleftcontainer h1 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
     .headerleftcontainer p {
-        font-size: 0rem;
+        font-size: rem;
     }
     .header-right {
         display: flex;
