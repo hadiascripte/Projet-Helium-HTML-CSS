@@ -11,45 +11,48 @@ li {
 body {
     background-color: rgb(27, 27, 27);
     height: 100vh;
+    min-width: 390px;
     width: 100%;
     color: white;
 }
 nav {
     display: grid;
     grid-template-columns: 50% 50%;
-    padding: 20px 30px;
+    padding: 20px;
 }
 nav ul {
     display: grid;
     grid-template-columns: 33% 33% 33%;
 }
-
-header {
+.header {
     display: grid;
-    grid-template-columns: 50% 50%;
-    padding: 20px 30px;
-    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 20px;
 }
 
 .headerleftcontainer h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
 }
 .headerleftcontainer h3 {
     color: rgb(79, 81, 240);
     margin: 10px 0;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 p {
     font-size: 0.8rem;
     width: 90%;
 }
 .header-right {
-    width: 50%;
-}
-.header-right {
-    /* Pour que l'image ne se déforme pas il faut mettre un heigth auto(pour le flex). Pour le grid bien faire attention a ce que l'image soit l'enfant direct du header. Elle ne doit pas être dans un container */
+    margin: auto;
     width: 100%;
 }
+#modem {
+    /* Pour que l'image ne se déforme pas il faut mettre un heigth auto(pour le flex). Pour le grid bien faire attention a ce que l'image soit l'enfant direct du header. Elle ne doit pas être dans un container */
+    width: 100%;
+    height: auto;
+}
+
 .info {
     display: flex;
     background: black;
@@ -84,6 +87,9 @@ p {
     justify-content: space-between; /* Aligne les enfants verticalement dans .infos-right */
     width: 70%;
 }
+.infos-right h3 {
+    font-size: 1rem;
+}
 .img-container {
     display: flex;
     justify-content: space-around;
@@ -91,4 +97,64 @@ p {
 .img-container img {
     height: 35px;
     margin-bottom: 15px;
+}
+/* ************************ Media queries ************************ */
+@media screen and (max-width: 1122px) {
+    .headerleftcontainer h1 {
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    .headerleftcontainer h1 {
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 605px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+    .headerleftcontainer {
+        display: block;
+    }
+
+    .headerleftcontainer h1 {
+        font-size: 2.5rem;
+    }
+    .header-right {
+        display: flex;
+        justify-content: center;
+    }
+    #modem {
+        margin-top: 15px;
+        width: 100%;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .infos-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .infos-right {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+    }
 }
