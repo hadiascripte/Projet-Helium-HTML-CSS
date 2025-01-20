@@ -104,7 +104,7 @@ p {
         font-size: 3.5rem;
     }
     .headerleftcontainer h3 {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
     .headerleftcontainer p {
         font-size: 0.8rem;
@@ -115,7 +115,7 @@ p {
         font-size: 3.5rem;
     }
     .headerleftcontainer h3 {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
     .headerleftcontainer p {
         font-size: 0.8rem;
@@ -141,7 +141,10 @@ p {
     }
 
     .headerleftcontainer h1 {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
+    }
+    .headerleftcontainer h3 {
+        font-size: 1rem;
     }
     .headerleftcontainer p {
         font-size: 1rem;
