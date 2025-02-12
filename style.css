@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "inter";
+    cursor: none;
 }
 li {
     list-style: none;
@@ -13,7 +14,7 @@ body {
     height: 100vh;
     min-width: 300px;
     width: 100%;
-    color: white;
+    color: whitesmoke;
 }
 nav {
     display: grid;
@@ -23,6 +24,15 @@ nav {
 nav ul {
     display: grid;
     grid-template-columns: 33% 33% 33%;
+}
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+a:hover {
+    color: rgb(79, 81, 240);
+    font-size: 1;
+    cursor: cell;
 }
 .header {
     display: grid;
@@ -49,7 +59,7 @@ p {
 }
 #modem {
     /* Pour que l'image ne se déforme pas il faut mettre un heigth auto(pour le flex). Pour le grid bien faire attention a ce que l'image soit l'enfant direct du header. Elle ne doit pas être dans un container */
-    width: 50%;
+    width: 90%;
     height: auto;
 }
 
@@ -150,6 +160,11 @@ p {
         display: flex;
         justify-content: center;
     }
+    #modem {
+        width: 70%;
+        margin-top: 50px;
+        height: auto;
+    }
 
     .info {
         display: flex;
@@ -172,4 +187,33 @@ p {
     .infos-right h3 {
         margin-bottom: 10px;
     }
+}
+.circle1 {
+    height: 15px;
+    width: 15px;
+    background: rgba(43, 80, 202, 0.822);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    z-index: 3;
+}
+.circle2 {
+    height: 60px;
+    width: 60px;
+    background: rgba(231, 229, 229, 0.507);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    transition: 0.15s;
+    z-index: 2;
+}
+.circle3 {
+    height: 120px;
+    width: 120px;
+    background: rgba(0, 0, 0, 0.493);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+    transition: 0.2s;
+    z-index: 1;
 }
