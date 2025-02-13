@@ -12,10 +12,36 @@ li {
 body {
     background-color: rgb(27, 27, 27);
     height: 100vh;
-    min-width: 300px;
     width: 100%;
     color: whitesmoke;
+    position: relative;
 }
+.circle1 {
+    height: 15px;
+    width: 15px;
+    background: rgba(43, 80, 202);
+}
+.circle2 {
+    height: 100px;
+    width: 100px;
+    background: rgba(231, 229, 229);
+    transition: 0.15s;
+}
+.circle3 {
+    height: 200px;
+    width: 200px;
+    background: rgb(8, 8, 8);
+    transition: 0.2s;
+}
+.circle1,
+.circle2,
+.circle3 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 1500px;
+    mix-blend-mode: difference;
+}
+
 nav {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -25,14 +51,17 @@ nav ul {
     display: grid;
     grid-template-columns: 33% 33% 33%;
 }
-a {
+a,
+a:visited {
     text-decoration: none;
     color: whitesmoke;
+    transition: 0.3s;
+    position: relative;
+    z-index: 1000;
 }
 a:hover {
-    color: rgb(79, 81, 240);
-    font-size: 1;
-    cursor: cell;
+    color: #2128bd;
+    font-size: 1.3rem;
 }
 .header {
     display: grid;
@@ -187,33 +216,4 @@ p {
     .infos-right h3 {
         margin-bottom: 10px;
     }
-}
-.circle1 {
-    height: 15px;
-    width: 15px;
-    background: rgba(43, 80, 202, 0.822);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    border-radius: 50px;
-    z-index: 3;
-}
-.circle2 {
-    height: 60px;
-    width: 60px;
-    background: rgba(231, 229, 229, 0.507);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    border-radius: 50px;
-    transition: 0.15s;
-    z-index: 2;
-}
-.circle3 {
-    height: 120px;
-    width: 120px;
-    background: rgba(0, 0, 0, 0.493);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    border-radius: 100px;
-    transition: 0.2s;
-    z-index: 1;
 }
